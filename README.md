@@ -31,3 +31,22 @@ A simple docker hello world project.
 > make build
 
 > make run
+
+
+## Explanation
+FROM python:3.8-alpine
+> Use an image from [dockerhub](https://hub.docker.com/_/python). Add an appropriate 'singletag' like `3.8-alpine` after `python:`
+
+WORKDIR .
+> set your work directory. the `.` is the current directory
+
+COPY lib.txt .
+> copy your dependencies file across to the container. you can run: `pip freeze > lib.txt` before building to create the dependency file.
+RUN pip install -r lib.txt
+> this is so that you get your dependencies installed. It's basically `pip install`ing each line in `lib.txt`. Our lib.txt is blank because out code does not require external libraries (outside the python version)
+
+COPY /. .
+> clone all your files into the container
+
+CMD ["python", "main.py"]
+> CMD is basically a RUN command **AFTER** you have created the docker container. any CMD command runs **INSIDE**
