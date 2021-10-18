@@ -5,6 +5,10 @@ A simple docker hello world project.
 
 Hope this helps a few fellow wandering souls on their journey to dockertopia.
 
+## Clarification
+
+I know.. I know.. I called this a 'hello world' project but had the audacity to include a timestamp! Well, that was for your own peace of mind.. in case you suspect this to be complete tomfoolery!
+
 ## Pre-setup
 
 1. install docker
